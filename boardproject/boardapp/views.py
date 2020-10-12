@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from .models import BoardModel
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -25,7 +26,7 @@ def loginfunc(request):
         user = authenticate(request, username=username2, password=password2)
         if user is not None:
             login(request, user)
-            return redirect('signup')
+            return redirect('list')
         else:
             return redirect('login') 
     return render(request, 'login.html')
@@ -34,7 +35,7 @@ def loginfunc(request):
 def listfunc(request):
     return render(request, 'list.html')
 
-
+@login_required
 def listfunc(request):
     object_list = BoardModel.objects.all()
     return render(request, 'list.html', {'object_list':object_list})
