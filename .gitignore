@@ -1,11 +1,14 @@
-todoproject/todoproject/settings.py
-boardproject/boardproject/settings.py
-boardproject/media/night_landscape.jpg
-blog
-competitive_programming
+# 過去のプロジェクト
+todoproject
+boardproject
 docker_django
 python_programming
 todoproject
 vuejs_intro
 helloworld
 flask_test
+
+# 202302で有効
+blog
+competitive_programming
+learn-go-with-tests
